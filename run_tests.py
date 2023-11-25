@@ -1,5 +1,6 @@
 import unittest
 from BSTestRunner import BSTestRunner
+import HTMLTestRunner
 import os
 
 def main():
@@ -17,9 +18,17 @@ def main():
     # 加载测试用例
     discover = unittest.defaultTestLoader.discover(case_path, pattern="test*.py")
 
+    # # 运行测试用例并生成报告
+    # with open(report_file, "wb") as report:
+    #     runner = BSTestRunner(
+    #         stream=report,
+    #         title="测试报告",
+    #         description="测试报告明细"
+    #     )
+
     # 运行测试用例并生成报告
     with open(report_file, "wb") as report:
-        runner = BSTestRunner(
+        runner =HTMLTestRunner.HTMLTestRunner(
             stream=report,
             title="测试报告",
             description="测试报告明细"
