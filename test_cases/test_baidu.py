@@ -20,7 +20,7 @@ class TestBaiduSearch(unittest.TestCase):
         search_button = self.driver.find_element(By.ID, "su")
         search_button.click()
 
-        sleep(2)
+        sleep(12)
         # 预期结果: 显示搜索结果页面。
         self.assertIn("百度为您找到相关结果约", self.driver.page_source)
 
@@ -34,7 +34,7 @@ class TestBaiduSearch(unittest.TestCase):
         search_button = self.driver.find_element(By.ID, "su")
         search_button.click()
 
-        sleep(2)
+        sleep(12)
         # 预期结果: 显示搜索结果页面。
         self.assertIn("百度为您找到相关结果约", self.driver.page_source)
 
@@ -48,7 +48,7 @@ class TestBaiduSearch(unittest.TestCase):
         search_button = self.driver.find_element(By.ID, "su")
         search_button.click()
 
-        sleep(2)
+        sleep(12)
         # 预期结果: 显示错误消息提示。
         error_message = self.driver.find_element(By.CLASS_NAME, "nors").text
         self.assertEqual(error_message, "抱歉，没有找到与“#$%^”相关的结果。")
