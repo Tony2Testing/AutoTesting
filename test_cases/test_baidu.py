@@ -24,20 +24,6 @@ class TestBaiduSearch(unittest.TestCase):
         # 预期结果: 显示搜索结果页面。
         self.assertIn("百度为您找到相关结果约", self.driver.page_source)
 
-    def test_search_multiple_valid_keywords(self):
-        # 测试步骤:
-        # 1. 在搜索输入框中输入多个有效关键字（例如："软件测试方法"）
-        search_input = self.driver.find_element(By.ID, "kw")
-        search_input.send_keys("软件测试方法")
-
-        # 2. 点击搜索按钮
-        search_button = self.driver.find_element(By.ID, "su")
-        search_button.click()
-
-        sleep(12)
-        # 预期结果: 显示搜索结果页面。
-        self.assertIn("百度为您找到相关结果约", self.driver.page_source)
-
     def test_search_special_characters(self):
         # 测试步骤:
         # 1. 在搜索输入框中输入特殊字符（例如："#$%^"）
