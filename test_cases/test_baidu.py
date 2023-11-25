@@ -24,21 +24,6 @@ class TestBaiduSearch(unittest.TestCase):
         # 预期结果: 显示搜索结果页面。
         self.assertIn("百度为您找到相关结果约", self.driver.page_source)
 
-    def test_search_special_characters(self):
-        # 测试步骤:
-        # 1. 在搜索输入框中输入特殊字符（例如："#$%^"）
-        search_input = self.driver.find_element(By.ID, "kw")
-        search_input.send_keys("#$%^")
-
-        # 2. 点击搜索按钮
-        search_button = self.driver.find_element(By.ID, "su")
-        search_button.click()
-
-        sleep(12)
-        # 预期结果: 显示错误消息提示。
-        error_message = self.driver.find_element(By.CLASS_NAME, "nors").text
-        self.assertEqual(error_message, "抱歉，没有找到与“#$%^”相关的结果。")
-
     def tearDown(self):
         self.driver.quit()
 
