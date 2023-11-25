@@ -1,5 +1,4 @@
 import unittest
-from BSTestRunner import BSTestRunner
 import HTMLTestRunner
 import os
 
